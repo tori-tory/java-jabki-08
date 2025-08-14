@@ -9,14 +9,14 @@ public class Main {
          * 1) Вывести список
          * Создайте список из 5 целых чисел. Выведите его элементы через пробел.
          */
-        List<Integer> arrayList = new ArrayList<Integer>();
+        List<Integer> arrayList = new ArrayList<>();
         Random random = new Random();
         for (int i = 0; i < 5; i++) {
             arrayList.add(random.nextInt(100));
         }
         printWithSpace(arrayList);
 
-        LinkedList<Integer> linkedList = new LinkedList<>(arrayList);
+        List<Integer> linkedList = new LinkedList<>(arrayList);
         linkedList.removeFirst();
         linkedList.addFirst(7);
         linkedList.removeLast();
@@ -45,7 +45,7 @@ public class Main {
          * 4) Сумма элементов
          * Найдите сумму всех чисел в списке
          */
-        Integer sum = 0;
+        long sum = 0;
         for (int i = 0; i < arrayList.size(); i++) {
             sum += arrayList.get(i);
         }
@@ -108,14 +108,14 @@ public class Main {
          *11) Создание списка строк и фильтрация
          * Создайте список строк. Выведите строки, длина которых больше 5
          */
-        List<String> stringList = new ArrayList<String>();
+        List<String> stringList = new ArrayList<>();
         stringList.add("Айвазовский");
         stringList.add("Моне");
         stringList.add("Венецианов");
         stringList.add("Серов");
         stringList.add("Кустодиев");
         System.out.println(stringList);
-        printLonger5(stringList);
+        printLongerThanFive(stringList);
 
         /**
          *12) Инвертировать список
@@ -165,7 +165,7 @@ public class Main {
         System.out.printf("В списке %s элемент(ов), больше чем %s\n", count, n);
     }
 
-    public static void printLonger5(List<String> stringList) {
+    public static void printLongerThanFive(List<String> stringList) {
         for (String string : stringList) {
             if (string.length() > 5) {
                 System.out.println(string);
@@ -174,7 +174,7 @@ public class Main {
     }
 
     private static void sumOddNumbers(List<Integer> arrayList) {
-        Integer sum = 0;
+        long sum = 0;
         for (Integer i : arrayList) {
             if ((i % 2) != 0) {
                 sum += i;
